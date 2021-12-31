@@ -3,26 +3,113 @@
 	"name": "Sabr",
 	"patterns": [
 		{
+			"include": "#comment"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
 		},
 		{
+			"include": "#numeric"
+		},
+		{
+			"include": "#char"
+		},
+		{
 			"include": "#preproc"
+		},
+		{
+			"include": "#ident"
+		},
+		{
+			"include": "#token"
 		}
 	],
 	"repository": {
+		"comment": {
+			"name": "comment",
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.sabr",
+					"match": "\\\\.*$"
+				},
+				{
+					"name": "comment.block.sabr",
+					"begin": "\\(",
+					"end": "\\)(\\s|$)"
+				}
+			]
+		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.sabr",
-				"match": "\\b(end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.sabr",
+					"match": "\\b(end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot)|for|-for)\\b"
+				},
+				{
+					"name": "keyword.operator",
+					"match": "(call|to|\\+|-|\\*|/|%|u/|u%|neg|1\\+|1-|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\|\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|fetch|store|s>f|u>f|f>s|f>u|show)(\\s|$)"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.sabr",
 			"begin": "\"",
-			"end": "\"",
+			"end": "\"(\\s|$)",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sabr",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numeric": {
+			"patterns": [
+				{
+					"name": "constant.numeric.sabr",
+					"match": "(\\+|-)?\\d+(\\s|$)"
+				},
+				{
+					"name": "constant.numeric.sabr",
+					"match": "(\\+|-)?\\.\\d+(e-?\\d+)?(\\s|$)"
+				},
+				{
+					"name": "constant.numeric.sabr",
+					"match": "(\\+|-)?\\d+\\.\\d*(e-?\\d+)?(\\s|$)"
+				},
+				{
+					"name": "constant.numeric.sabr",
+					"match": "(\\+|-)?(0(x\\h*|o[0-7]*|b[0-1]*))(\\s|$)"
+				},
+				{
+					"name":"invalid.illegal.sabr",
+					"match": "(\\+|-)?(0(x\\w*|o\\w*|b\\w*))(\\s|$)"
+				},
+				{
+					"name": "invalid.illegal.sabr",
+					"match": "(\\+|-)?\\d+\\.\\d+e\\S*(\\s|$)"
+				},
+				{
+					"name": "invalid.illegal.sabr",
+					"match": "(\\+|-)?\\d+\\.\\S*(\\s|$)"
+				},
+				{
+					"name": "invalid.illegal.sabr",
+					"match": "(\\+|-)?\\.\\d+\\S+(\\s|$)"
+				},
+				{
+					"name": "invalid.illegal.sabr",
+					"match": "(\\+|-)?\\d+\\S+(\\s|$)"
+				}
+				
+			]
+		},
+		"char": {
+			"name": "string.quoted.single.sabr",
+			"begin": "'",
+			"end": "'(\\s|$)",
 			"patterns": [
 				{
 					"name": "constant.character.escape.sabr",
@@ -31,15 +118,38 @@
 			]
 		},
 		"preproc": {
-			"name": "meta.preprocessor.sabr",
-			"begin": "#",
-			"end": "",
+			"name": "entity.other.sabr",
 			"patterns": [
 				{
-					"name": "meta.preprocessor",
-					"match": "\\\\."
+					"name": "entity.other",
+					"match": "#\\S+(\\s|$)"
+				},
+				{
+					"name": "entity.other",
+					"begin": "{",
+					"end": "}(\\s|$)"
 				}
 			]
+		},
+		"ident": {
+			"patterns": [
+				{
+					"name": "invalid.illegal.sabr",
+					"match": "\\$(\\d|@|\\(|\\)|{|}|#|\\$|\\\\|'\")\\S*(\\s|$)"
+				},
+				{
+					"name": "invalid.illegal.sabr",
+					"match": "\\$(\\+|-|\\.)(e|\\d)\\S*(\\s|$)"
+				},
+				{
+					"name": "constant.sabr",
+					"match": "\\$\\S+(\\s|$)"
+				}
+			]
+		},
+		"token": {
+			"name": "variable.sabr",
+			"match": "\\S+(\\s|$)"
 		}
 	},
 	"scopeName": "source.sabr"
