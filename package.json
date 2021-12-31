@@ -13,7 +13,7 @@
         "languages": [{
             "id": "sabr",
             "aliases": ["Sabr", "sabr"],
-            "extensions": [".sabr"],
+            "extensions": [".sabrc"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
