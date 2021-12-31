@@ -7,13 +7,16 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#preproc"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.sabr",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member)\\b"
 			}]
 		},
 		"strings": {
@@ -23,6 +26,17 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.sabr",
+					"match": "\\\\."
+				}
+			]
+		},
+		"preproc": {
+			"name": "meta.preprocessor.sabr",
+			"begin": "#",
+			"end": "",
+			"patterns": [
+				{
+					"name": "meta.preprocessor",
 					"match": "\\\\."
 				}
 			]
