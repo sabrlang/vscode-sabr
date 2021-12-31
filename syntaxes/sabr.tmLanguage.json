@@ -24,6 +24,9 @@
 			"include": "#ident"
 		},
 		{
+			"include": "#class"
+		},
+		{
 			"include": "#token"
 		}
 	],
@@ -118,7 +121,6 @@
 			]
 		},
 		"preproc": {
-			"name": "entity.other.sabr",
 			"patterns": [
 				{
 					"name": "entity.other.sabr",
@@ -139,13 +141,17 @@
 				},
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "\\$(\\+|-|\\.)(e|\\d)\\S*(\\s|$)"
+					"match": "\\$(\\+|-|\\.)\\d\\S*(\\s|$)"
 				},
 				{
 					"name": "constant.other.sabr",
 					"match": "\\$\\S+(\\s|$)"
 				}
 			]
+		},
+		"class": {
+			"name": "entity.name.class.sabr",
+			"match": "\\S+\\.\\S+(\\s|$)"
 		},
 		"token": {
 			"name": "variable.other.sabr",
