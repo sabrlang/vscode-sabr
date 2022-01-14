@@ -49,11 +49,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.sabr",
-					"match": "\\b(end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot)|for|-for)\\b"
+					"match": "\\b(end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot))\\b"
 				},
 				{
 					"name": "keyword.operator.sabr",
-					"match": "(call|to|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\|\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|fetch|store|s>f|u>f|f>s|f>u|show)(\\s|$)"
+					"match": "(call|to|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|fetch|store|s>f|u>f|f>s|f>u|show)(\\s|$)"
 				}
 			]
 		},
