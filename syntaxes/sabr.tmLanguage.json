@@ -49,7 +49,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.sabr",
-					"match": "\\b(end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot))\\b"
+					"match": "\\b(exit|end|if|else|loop|while|break|continue|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot))\\b"
 				},
 				{
 					"name": "keyword.operator.sabr",
