@@ -2,7 +2,8 @@
     "name": "vscode-sabr",
     "displayName": "Sabr",
     "description": "Sabr Programming Language",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "repository": "mhcoma/vscode-sabr",
     "engines": {
         "vscode": "^1.63.0"
     },
@@ -10,16 +11,25 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "sabr",
-            "aliases": ["Sabr", "sabr"],
-            "extensions": [".sabrc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "sabr",
-            "scopeName": "source.sabr",
-            "path": "./syntaxes/sabr.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "sabr",
+                "aliases": [
+                    "Sabr",
+                    "sabr"
+                ],
+                "extensions": [
+                    ".sabrc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "sabr",
+                "scopeName": "source.sabr",
+                "path": "./syntaxes/sabr.tmLanguage.json"
+            }
+        ]
     }
 }
