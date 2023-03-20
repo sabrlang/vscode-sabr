@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.operator.sabr",
-					"match": "(call|set|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|allot|fetch|store|s>f|u>f|f>s|f>u|show)(\\s|$)"
+					"match": "(call|set|addr|ref|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|allot|fetch|store|s>f|u>f|f>s|f>u|show)(\\s|$)"
 				}
 			]
 		},
