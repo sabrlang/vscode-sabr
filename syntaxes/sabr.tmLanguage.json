@@ -28,6 +28,9 @@
 		},
 		{
 			"include": "#token"
+		},
+		{
+			"include": "#other"
 		}
 	],
 	"repository": {
@@ -41,7 +44,7 @@
 				{
 					"name": "comment.block.sabr",
 					"begin": "\\(",
-					"end": "\\)(\\s|$)"
+					"end": "\\)$"
 				}
 			]
 		},
@@ -49,18 +52,18 @@
 			"patterns": [
 				{
 					"name": "keyword.control.sabr",
-					"match": "\\b(exit|end|if|else|loop|while|break|continue|for|ufor|ffor|from|to|step|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot))\\b"
+					"match": "(exit|end|if|else|loop|while|break|continue|for|ufor|ffor|from|to|step|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot))"
 				},
 				{
 					"name": "keyword.operator.sabr",
-					"match": "(call|set|addr|ref|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|allot|fetch|store|s>f|u>f|f>s|f>u|show)(\\s|$)"
+					"match": "(call|set|addr|ref|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|allot|fetch|store|s>f|u>f|f>s|f>u|show)"
 				}
 			]
 		},
 		"strings": {
 			"name": "string.quoted.double.sabr",
 			"begin": "\"",
-			"end": "\"(\\s|$)",
+			"end": "\"",
 			"patterns": [
 				{
 					"name": "constant.character.escape.sabr",
@@ -72,39 +75,39 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.sabr",
-					"match": "(\\+|-)?\\d+(\\s|$)"
+					"match": "(\\+|-)?\\d+"
 				},
 				{
 					"name": "constant.numeric.sabr",
-					"match": "(\\+|-)?\\.\\d+(e-?\\d+)?(\\s|$)"
+					"match": "(\\+|-)?\\.\\d+(e-?\\d+)?"
 				},
 				{
 					"name": "constant.numeric.sabr",
-					"match": "(\\+|-)?\\d+\\.\\d*(e-?\\d+)?(\\s|$)"
+					"match": "(\\+|-)?\\d+\\.\\d*(e-?\\d+)?"
 				},
 				{
 					"name": "constant.numeric.sabr",
-					"match": "(\\+|-)?(0(x\\h*|o[0-7]*|b[0-1]*))(\\s|$)"
+					"match": "(\\+|-)?(0(x\\h*|o[0-7]*|b[0-1]*))"
 				},
 				{
 					"name":"invalid.illegal.sabr",
-					"match": "(\\+|-)?(0(x\\w*|o\\w*|b\\w*))(\\s|$)"
+					"match": "(\\+|-)?(0(x\\w*|o\\w*|b\\w*))"
 				},
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "(\\+|-)?\\d+\\.\\d+e\\S*(\\s|$)"
+					"match": "(\\+|-)?\\d+\\.\\d+e\\S*"
 				},
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "(\\+|-)?\\d+\\.\\S*(\\s|$)"
+					"match": "(\\+|-)?\\d+\\.\\S*"
 				},
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "(\\+|-)?\\.\\d+\\S+(\\s|$)"
+					"match": "(\\+|-)?\\.\\d+\\S+"
 				},
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "(\\+|-)?\\d+\\S+(\\s|$)"
+					"match": "(\\+|-)?\\d+\\S+"
 				}
 				
 			]
@@ -112,7 +115,7 @@
 		"char": {
 			"name": "string.quoted.single.sabr",
 			"begin": "'",
-			"end": "'(\\s|$)",
+			"end": "'",
 			"patterns": [
 				{
 					"name": "constant.character.escape.sabr",
@@ -124,12 +127,12 @@
 			"patterns": [
 				{
 					"name": "entity.other.sabr",
-					"match": "#\\S+(\\s|$)"
+					"match": "#\\S+"
 				},
 				{
 					"name": "entity.other.sabr",
 					"begin": "{",
-					"end": "}(\\s|$)"
+					"end": "}"
 				}
 			]
 		},
@@ -137,25 +140,29 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "\\$(\\d|@|\\(|\\)|{|}|#|\\$|\\\\|'\")\\S*(\\s|$)"
+					"match": "\\$(\\d|@|\\(|\\)|{|}|#|\\$|\\\\|'\")\\S*"
 				},
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "\\$(\\+|-|\\.)\\d\\S*(\\s|$)"
+					"match": "\\$(\\+|-|\\.)\\d\\S*"
 				},
 				{
 					"name": "constant.other.sabr",
-					"match": "\\$\\S+(\\s|$)"
+					"match": "\\$\\S+"
 				}
 			]
 		},
 		"class": {
 			"name": "entity.name.class.sabr",
-			"match": "\\S+\\.\\S+(\\s|$)"
+			"match": "\\S+\\.\\S+"
 		},
 		"token": {
 			"name": "variable.other.sabr",
-			"match": "\\S+(\\s|$)"
+			"match": "\\$\\S+"
+		},
+		"other": {
+			"name": "variable.name.sabr",
+			"match": "\\S+"
 		}
 	},
 	"scopeName": "source.sabr"
