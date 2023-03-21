@@ -2,7 +2,7 @@
     "name": "vscode-sabr",
     "displayName": "Sabr",
     "description": "Extension for Sabr Programming Language",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "repository": "mhcoma/vscode-sabr",
     "engines": {
         "vscode": "^1.63.0"
