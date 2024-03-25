@@ -52,11 +52,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.sabr",
-					"match": "(exit|end|if|else|loop|while|break|continue|for|ufor|ffor|from|to|step|switch|case|pass|func|macro|defer|return|struct|member|import|define|eval|concat|2?t(drop|nip|dup|over|tuck|swap|rot))"
+					"match": "(exit|end|if|else|loop|while|break|continue|for|ufor|ffor|from|to|step|switch|case|pass|func|macro|defer|return|struct|member)"
 				},
 				{
 					"name": "keyword.operator.sabr",
-					"match": "(call|set|addr|ref|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|allot|fetch|store|s>f|u>f|f>s|f>u|show)"
+					"match": "(set|addr|ref|\\+|-|\\*|/|%|u/|u%|neg|\\+\\+|--|=|!=|>|>=|<|<=|u>|u>=|u<|u<=|f\\+|f-|f\\*|f/|f%|fneg|f=|f!=|f>|f>=|f<|f<=|&|\\||\\^|~|<<|>>|2?(drop|nip|dup|over|tuck|swap|rot)|alloc|resize|free|allot|fetch|store|itof|utof|ftoi|ftou|show)"
 				}
 			]
 		},
@@ -126,11 +126,11 @@
 		"preproc": {
 			"patterns": [
 				{
-					"name": "entity.other.sabr",
+					"name": "keyword.control.sabr",
 					"match": "#\\S+"
 				},
 				{
-					"name": "entity.other.sabr",
+					"name": "string.other.sabr",
 					"begin": "{",
 					"end": "}"
 				}
@@ -140,7 +140,7 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.sabr",
-					"match": "\\$(\\d|@|\\(|\\)|{|}|#|\\$|\\\\|'\")\\S*"
+					"match": "\\$(\\d|@|\\(|\\)|{|}|\\$|\\\\|'\")\\S*"
 				},
 				{
 					"name": "invalid.illegal.sabr",
